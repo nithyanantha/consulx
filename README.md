@@ -21,49 +21,48 @@ https://www.consul.io/docs/agent/http.html
 
 ## Create Consul Clusters
 
-        ### Add 1st Servers as a Leader
+        1. Add 1st Servers as a Leader
         consul agent -server -bootstrap -data-dir /tmp/consul --bind 192.168.0.1 - -node server1 &
 
-        ### Add 2nd Server as slave
+        2. Add 2nd Server as slave
         consul agent -server -data-dir /tmp/consul --node server2 --bind 192.168.0. 2 &
 
-        ### Add 3rd Server as slave
+        3.  Add 3rd Server as slave
         consul agent -server -data-dir /tmp/consul --node server3 --bind 192.168.0. 3 &
 
-        ## Joing Servers nodes in the cluster as slaves
+        4. Joing Servers nodes in the cluster as slaves
 
         consul join 192.168.0.2 192.168.0.3
 
 ----
 ## Create Consul Client
-consul agent -ui -data-dir /tmp/consul -client 192.168.0.20 -ui-dir
-/vagrant/consul-ui/ -join 192.168.0.1 --bind 192.168.0.20 --node agent -config-dir ~/services/
-&
+        consul agent -ui -data-dir /tmp/consul -client 192.168.0.20 -ui-dir
+        /vagrant/consul-ui/ -join 192.168.0.1 --bind 192.168.0.20 --node agent -config-dir ~/services/
+        &
 
 -----
 ## Sample Consul Cli Commands
 
-consul members -rpc-addr=192.168.0.20:8400
+        consul members -rpc-addr=192.168.0.20:8400
 
-
-dig @192.168.0.20 -p 8600 orderserver.service.dc1.consul. Any
+        dig @192.168.0.20 -p 8600 orderserver.service.dc1.consul. Any
 
 -----
 ### Sample Queries
 
-curl http://localhost:8500/v1/catalog/datacenters
+        curl http://localhost:8500/v1/catalog/datacenters
 
-curl http://localhost:8500/v1/catalog/services
+        curl http://localhost:8500/v1/catalog/services
 
-curl http://localhost:8500/v1/catalog/service/orderserver
+        curl http://localhost:8500/v1/catalog/service/orderserver
 
-curl http://192.168.0.20:8500/v1/agent/services
+        curl http://192.168.0.20:8500/v1/agent/services
 
-curl http://localhost:8500/v1/catalog/nodes
+        curl http://localhost:8500/v1/catalog/nodes
 
-curl http://localhost:8500/v1/catalog/node/agent
+        curl http://localhost:8500/v1/catalog/node/agent
 
-http://localhost:8500/v1/catalog/register
+        http://localhost:8500/v1/catalog/register
 
 Method: PUT
 
