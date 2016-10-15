@@ -50,21 +50,36 @@ https://www.consul.io/docs/agent/http.html
 -----
 ### Sample Queries
 
+        List Data Centers
         curl http://localhost:8500/v1/catalog/datacenters
+        
+        -----
 
+        List  Services
         curl http://localhost:8500/v1/catalog/services
 
+        -----
+        
+        Show the information about particular service
         curl http://localhost:8500/v1/catalog/service/orderserver
 
+        -------
+        Show the information services are running in the agent
         curl http://192.168.0.20:8500/v1/agent/services
-
+        
+        -------
+        List Nodes
         curl http://localhost:8500/v1/catalog/nodes
 
+        ----
+        List Agent
         curl http://localhost:8500/v1/catalog/node/agent
-
+        
+        -----
+        Register New Node
         http://localhost:8500/v1/catalog/register
 
-Method: PUT
+        Method: PUT
 
                                       {
                           "Datacenter": "dc1",
@@ -95,9 +110,9 @@ Method: PUT
                         }
  
 
-
-http://localhost:8500/v1/catalog/deregister
-Method: PUT
+        Deregister Existing Node
+        http://localhost:8500/v1/catalog/deregister
+        Method: PUT
 
         {
            "Datacenter": "dc1",
