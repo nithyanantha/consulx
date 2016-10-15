@@ -98,7 +98,8 @@ Method: PUT
 
 http://localhost:8500/v1/catalog/deregister
 Method: PUT
-                        {
-                          "Datacenter": "dc1",
-                          "Node": "foobar",
-                        }
+
+        {
+           "Datacenter": "dc1",
+           "Node": "foobar",
+        }
