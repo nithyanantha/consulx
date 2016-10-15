@@ -109,7 +109,8 @@ https://www.consul.io/docs/agent/http.html
                           }
                         }
  
-
+        -------
+        
         Deregister Existing Node
         http://localhost:8500/v1/catalog/deregister
         Method: PUT
