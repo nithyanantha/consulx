@@ -39,7 +39,7 @@ consul agent -ui -data-dir /tmp/consul -client 192.168.0.20 -ui-dir
 
 consul members
 
-consul reload
+consul reload -rpc-addr=192.168.0.20:8400
 
 
 
