@@ -20,6 +20,13 @@ https://www.consul.io/docs/agent/http.html
 
 http://localhost:8500/ui
 
+### CLI Commands
+
+consul agent -server -bootstrap -data-dir /tmp/consul
+
+consul agent -server -data-dir /tmp/consul
+
+consul join 192.168.0.2 192.168.0.3
 
 ### Sample Queries
 
