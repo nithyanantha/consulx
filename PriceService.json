@@ -1,0 +1,16 @@
+
+{
+    "service": {
+        "id":"1",
+        "name": "priceservice",
+        "port": 80,
+        "address":"192.168.10.3",
+        "tags": ["priceservice", "demonstration"],
+        "check": {
+            "script": "curl 192.168.10.3:80 > /dev/null 2>&1",
+            "interval": "10s"
+        }
+    }
+}
+
+
