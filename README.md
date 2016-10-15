@@ -21,18 +21,18 @@ https://www.consul.io/docs/agent/http.html
 
 ## Create Consul Clusters
 
-### Add 1st Servers as a Leader
-consul agent -server -bootstrap -data-dir /tmp/consul --bind 192.168.0.1 - -node server1 &
+        ### Add 1st Servers as a Leader
+        consul agent -server -bootstrap -data-dir /tmp/consul --bind 192.168.0.1 - -node server1 &
 
-### Add 2nd Server as slave
-consul agent -server -data-dir /tmp/consul --node server2 --bind 192.168.0. 2 &
+        ### Add 2nd Server as slave
+        consul agent -server -data-dir /tmp/consul --node server2 --bind 192.168.0. 2 &
 
-### Add 3rd Server as slave
-consul agent -server -data-dir /tmp/consul --node server3 --bind 192.168.0. 3 &
+        ### Add 3rd Server as slave
+        consul agent -server -data-dir /tmp/consul --node server3 --bind 192.168.0. 3 &
 
-## Joing Servers nodes in the cluster as slaves
+        ## Joing Servers nodes in the cluster as slaves
 
-consul join 192.168.0.2 192.168.0.3
+        consul join 192.168.0.2 192.168.0.3
 
 ----
 ## Create Consul Client
