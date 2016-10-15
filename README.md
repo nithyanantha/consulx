@@ -22,11 +22,30 @@ http://localhost:8500/ui
 
 ### CLI Commands
 
-consul agent -server -bootstrap -data-dir /tmp/consul
+consul agent -server -bootstrap -data-dir /tmp/consul --bind 192.168.0.1 - -node server1 &
 
-consul agent -server -data-dir /tmp/consul
+consul agent -server -data-dir /tmp/consul --node server2 --bind 192.168.0. 2 &
+
+consul agent -server -data-dir /tmp/consul --node server3 --bind 192.168.0. 3 &
+
+consul agent -server -data-dir /tmp/consul &
 
 consul join 192.168.0.2 192.168.0.3
+
+
+consul agent -ui -data-dir /tmp/consul -client 192.168.0.20 -ui-dir
+/vagrant/consul-ui/ -join 192.168.0.1 --bind 192.168.0.20 --node agent -config-dir ~/services/
+&
+
+consul members
+
+consul reload
+
+
+
+
+
+
 
 ### Sample Queries
 
