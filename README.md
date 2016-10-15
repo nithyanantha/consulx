@@ -37,7 +37,12 @@ consul agent -ui -data-dir /tmp/consul -client 192.168.0.20 -ui-dir
 /vagrant/consul-ui/ -join 192.168.0.1 --bind 192.168.0.20 --node agent -config-dir ~/services/
 &
 
-consul members
+consul members -rpc-addr=192.168.0.20:8400
+
+dig @192.168.0.20 -p 8600 orderserver.service.dc1.consul. Any
+
+sudo yum install bind-utils
+ 
 
 consul reload -rpc-addr=192.168.0.20:8400
 
