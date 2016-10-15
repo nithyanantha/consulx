@@ -17,6 +17,7 @@ https://releases.hashicorp.com/consul/0.7.0/consul_0.7.0_web_ui.zip"
 
 https://www.consul.io/docs/agent/http.html
 
+-----
 ### Consul UI
 
 http://localhost:8500/ui
